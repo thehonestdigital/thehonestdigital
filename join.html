@@ -48,7 +48,7 @@
       function PriceCard() {
         const includes = [
           'New courses every month, covering socials, web, email, text and data',
-          'Live monthly workshops and Q&amp;A, with replays if you cannot make it',
+          'Live monthly workshops, with replays if you cannot make it',
           'Reusable templates you can adapt to your own music',
           'The community, a generous room of working musicians',
           'Real examples of what is working for releases right now',
@@ -69,7 +69,7 @@
                     Month to month. No annual lock-in, no setup fee, no &ldquo;book a call&rdquo; gauntlet. Cancel in two clicks whenever you like.
                   </p>
                   <div style={{ marginTop: 30, display: 'flex', flexDirection: 'column', gap: 12 }}>
-                    <a href="#start" className="btn btn-clay btn-lg" style={{ width: '100%' }}>Start this month →</a>
+                    <a href="https://stan.store/thehonestdigital" target="_blank" rel="noopener" className="btn btn-clay btn-lg" style={{ width: '100%' }}>Start this month →</a>
                     <a href="contact.html" className="btn btn-ghost btn-lg" style={{ width: '100%' }}>Have a question first?</a>
                   </div>
                   <div className="eyebrow" style={{ marginTop: 22, textAlign: 'center' }}>14-day &ldquo;this isn&rsquo;t for me&rdquo; refund</div>
@@ -99,7 +99,7 @@
       function Rhythm() {
         const weeks = [
           ['Courses', 'New course drops', 'A fresh, plain-language course each month walking you through one piece of your foundation, step by step.', 'var(--clay)'],
-          ['Live', 'Workshop &amp; Q&amp;A', 'Show up live to work through your questions in real time, or catch the replay whenever it suits you.', 'var(--sage)'],
+          ['Live', 'Live workshop', 'Show up live to work through your foundation in real time, or catch the replay whenever it suits you.', 'var(--sage)'],
           ['Templates', 'Reusable starting points', 'Grab a template, adapt it to your music, and skip the blank page entirely.', 'var(--marigold)'],
           ['Community', 'The room', 'Share wins, swap notes, and hear what is working for other musicians right now.', 'var(--sky)'],
         ];
@@ -151,10 +151,10 @@
       function FAQ() {
         const items = [
           ['Is it really month to month?', 'Yes. You&rsquo;re billed $37 each month and can cancel anytime from your account, with no email-us-to-quit nonsense. Stay for a month or for years.'],
-          ['I&rsquo;m not techy. Will I keep up?', 'That&rsquo;s exactly who this is built for. Every course assumes no team and no jargon. If you can send an email, you can do this.'],
+          ["I'm not techy. Will I keep up?", 'That&rsquo;s exactly who this is built for. Every course assumes no team and no jargon. If you can send an email, you can do this.'],
           ['Is this just for one platform?', 'No. We cover your whole digital foundation: socials, website, email, text, and the data behind them, so it all works together.'],
           ['Do I need a website already?', 'Nope. One of the courses walks you from nothing to a simple site you own. Bring it to a workshop and we&rsquo;ll work through it together.'],
-          ['What if I can&rsquo;t make the live calls?', 'Everything&rsquo;s recorded and the courses are yours while you&rsquo;re a member. Plenty of folks learn entirely from replays.'],
+          ['What if I cannot make the live calls?', 'Everything&rsquo;s recorded and the courses are yours while you&rsquo;re a member. Plenty of folks learn entirely from replays.'],
           ['How often do new courses drop?', 'Every month. There&rsquo;s always something new to work through, plus the full back catalog the moment you join.'],
         ];
         const [open, setOpen] = useState(0);
@@ -185,9 +185,6 @@
 
       // Final sign-up band
       function Start() {
-        const [email, setEmail] = useState('');
-        const [done, setDone] = useState(false);
-        const submit = (e) => { e.preventDefault(); if (email.trim()) setDone(true); };
         return (
           <section id="start" className="section" style={{ background: 'var(--ink)', color: 'var(--cream)', paddingTop: 110, paddingBottom: 120, position: 'relative', zIndex: 1, overflow: 'hidden' }}>
             <div className="container relative" style={{ textAlign: 'center', maxWidth: 760 }}>
@@ -196,19 +193,11 @@
               </div>
               <h2 className="display h-lg" style={{ color: 'var(--cream)' }}>Start the month you stop <span className="italic" style={{ color: 'var(--marigold)' }}>waiting.</span></h2>
               <p className="lead" style={{ color: 'rgba(246,242,234,0.78)', marginTop: 20 }}>
-                Drop your email and we&rsquo;ll take you to checkout. $37, month to month, cancel anytime.
+                $37, month to month, cancel anytime. You&rsquo;ll be set up in a couple of minutes.
               </p>
-              {done ? (
-                <div style={{ marginTop: 34, display: 'inline-flex', alignItems: 'center', gap: 12 }}>
-                  <SeedGlyph size={28} color="var(--marigold)" />
-                  <span className="italic" style={{ fontSize: 22 }}>You&rsquo;re in. Check your inbox to finish joining. Welcome aboard.</span>
-                </div>
-              ) : (
-                <form onSubmit={submit} style={{ marginTop: 34, display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap' }}>
-                  <input className="input" type="email" required placeholder="you@band.com" value={email} onChange={e => setEmail(e.target.value)} style={{ minWidth: 280, maxWidth: 360, background: 'rgba(246,242,234,0.06)', color: 'var(--cream)', borderColor: 'rgba(246,242,234,0.3)' }} />
-                  <button type="submit" className="btn btn-clay btn-lg">Join for $37/month →</button>
-                </form>
-              )}
+              <div style={{ marginTop: 34, display: 'flex', justifyContent: 'center' }}>
+                <a href="https://stan.store/thehonestdigital" target="_blank" rel="noopener" className="btn btn-clay btn-lg">Join for $37/month →</a>
+              </div>
               <div className="eyebrow" style={{ marginTop: 22, color: 'rgba(246,242,234,0.55)' }}>No contracts · No upsells · Real people on the other end</div>
             </div>
           </section>
