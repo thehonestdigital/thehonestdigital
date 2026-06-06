@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Contact · Honest Digital</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-97PPL410MQ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-97PPL410MQ');
+    </script>
+    <meta name="description" content="Email Ali, or apply to work one-on-one. Straight answers, no runaround." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="site.css" />
+    <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+    <script type="text/babel" src="logo.jsx"></script>
+    <script type="text/babel" src="site-shared.jsx"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const { useState } = React;
+
+      // ───────────────────────────────────────────────────────────────
+      // Paste your Google Form embed URL between the quotes below.
+      // In Google Forms: Send  ›  <>  (embed)  ›  copy the src="..." URL
+      // (it looks like https://docs.google.com/forms/d/e/XXXX/viewform?embedded=true)
+      // Leave it blank to show the placeholder.
+      const GOOGLE_FORM_SRC = 'https://docs.google.com/forms/d/e/1FAIpQLScK4E3OxHcbTBXH_k6lEsVZwbp2woJaez-dp9KC2YaaIQyBjw/viewform?embedded=true';
+      // ───────────────────────────────────────────────────────────────
+
+      function Hero() {
+        return (
+          <section className="section" style={{ paddingTop: 40, paddingBottom: 30 }}>
+            <div className="container relative">
+              <div className="eyebrow" style={{ marginBottom: 24 }}>Contact</div>
+              <h1 className="display h-xl" style={{ maxWidth: 900 }}>Straight answers, <span className="italic">no</span> runaround.</h1>
+            </div>
+          </section>
+        );
+      }
+
+      function ApplyOneOnOne() {
+        const points = [
+          'Direct, one-on-one work with me, not a team or a handoff',
+          'A foundation built around your music, your goals, your pace',
+          'A small number of spots, so everyone gets my full attention',
+        ];
+        return (
+          <section id="apply" className="section" style={{ background: 'var(--ink)', color: 'var(--cream)', paddingTop: 100, paddingBottom: 100, position: 'relative', zIndex: 1, overflow: 'hidden' }}>
+            <div className="container relative apply-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.05fr', gap: 56, alignItems: 'start' }}>
+              <div>
+                <div className="eyebrow" style={{ color: 'var(--marigold)', marginBottom: 22 }}>By application · 1&#8202;:&#8202;1</div>
+                <h2 className="display h-lg" style={{ color: 'var(--cream)' }}>Work with me <span className="italic">directly.</span></h2>
+                <p className="lead" style={{ color: 'rgba(246,242,234,0.8)', marginTop: 22, maxWidth: 460 }}>
+                  Beyond the membership, I take on a handful of musicians one-on-one each season. It is hands-on, personal, and intentionally small. I do not work with everyone, and that is the point.
+                </p>
+                <ul style={{ marginTop: 28, display: 'flex', flexDirection: 'column', gap: 14 }}>
+                  {points.map((t, i) => (
+                    <li key={i} style={{ display: 'flex', gap: 14, alignItems: 'flex-start', fontSize: 17, lineHeight: 1.5 }}>
+                      <span aria-hidden style={{ flexShrink: 0, marginTop: 1, color: 'var(--marigold)' }}><SeedGlyph size={20} /></span>
+                      <span>{t}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="eyebrow" style={{ color: 'rgba(246,242,234,0.55)', marginTop: 28 }}>Applications are read personally · You&rsquo;ll hear back either way</p>
+              </div>
+
+              <div className="card" style={{ background: 'var(--cream)', color: 'var(--ink)', padding: 'clamp(24px, 3vw, 36px)', position: 'relative' }}>
+                <div className="eyebrow" style={{ marginBottom: 18 }}>The application</div>
+                {GOOGLE_FORM_SRC ? (
+                  <iframe
+                    title="Apply to work with Ali one-on-one"
+                    src={GOOGLE_FORM_SRC}
+                    style={{ width: '100%', minHeight: 620, border: 'none', borderRadius: 8 }}
+                  >Loading…</iframe>
+                ) : (
+                  <div style={{
+                    border: '2px dashed var(--line-strong)', borderRadius: 10, padding: '48px 28px',
+                    textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14,
+                    minHeight: 360, justifyContent: 'center',
+                  }}>
+                    <span style={{ color: 'var(--clay)' }}>
+                      <DandelionO size={0.5} variant="classic" puffStyle="brush" withSeeds={true} seedCount={4} />
+                    </span>
+                    <div style={{ fontWeight: 700, fontSize: 19 }}>Your Google Form goes here</div>
+                    <p style={{ margin: 0, fontSize: 14, lineHeight: 1.6, color: 'var(--warm-grey)', maxWidth: 320 }}>
+                      Paste your form&rsquo;s embed link into <span style={{ fontFamily: 'ui-monospace, monospace', fontStyle: 'normal' }}>GOOGLE_FORM_SRC</span> at the top of this page and it will appear right here.
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
+            <div aria-hidden style={{ position: 'absolute', bottom: -60, left: -50, color: 'rgba(246,242,234,0.06)' }}>
+              <DandelionO size={1.3} variant="classic" puffStyle="brush" withSeeds={false} whole={true} />
+            </div>
+          </section>
+        );
+      }
+
+      function Body() {
+        return (
+          <section className="section" style={{ paddingTop: 110, paddingBottom: 120 }}>
+            <div className="container relative" style={{ maxWidth: 760 }}>
+              <div className="eyebrow" style={{ marginBottom: 18 }}>Just a question?</div>
+              <p className="lead" style={{ maxWidth: 540 }}>
+                Wondering if it&rsquo;s right for your music? Tell me what you make, and I&rsquo;ll give you a straight answer, even if that answer is &ldquo;not yet.&rdquo;
+              </p>
+
+              <div className="card" style={{ marginTop: 32, padding: 'clamp(36px, 5vw, 56px)', display: 'flex', flexDirection: 'column', gap: 18, alignItems: 'flex-start', position: 'relative', overflow: 'hidden' }}>
+                <span style={{ color: 'var(--clay)' }}>
+                  <DandelionO size={0.55} variant="classic" puffStyle="brush" withSeeds={true} seedCount={4} />
+                </span>
+                <div className="eyebrow">Email me</div>
+                <a href="mailto:ali@thehonestdigital.com" className="display" style={{ fontSize: 'clamp(26px, 4vw, 44px)', letterSpacing: '-0.02em', wordBreak: 'break-word' }}>ali@thehonestdigital.com</a>
+                <a href="mailto:ali@thehonestdigital.com" className="btn btn-clay btn-lg" style={{ marginTop: 8 }}>Write to me →</a>
+              </div>
+
+              <div className="card" style={{ marginTop: 24, padding: 28, display: 'flex', gap: 18, alignItems: 'center', background: 'var(--paper)' }}>
+                <span style={{ color: 'var(--clay)', flexShrink: 0 }}>
+                  <DandelionO size={0.4} variant="classic" puffStyle="brush" withSeeds={false} whole={true} />
+                </span>
+                <div>
+                  <div style={{ fontWeight: 700, fontSize: 17 }}>Ready to skip the question?</div>
+                  <a href="join.html" className="nav-link" style={{ borderBottom: '1.5px solid currentColor', paddingBottom: 3, display: 'inline-block', marginTop: 6 }}>Join for $37/month →</a>
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      }
+
+      function App() {
+        return (
+          <div>
+            <DriftingSeeds count={10} />
+            <Nav active="contact" />
+            <Hero />
+            <ApplyOneOnOne />
+            <Body />
+            <Footer />
+          </div>
+        );
+      }
+      ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+    <style>
+      @media (max-width: 920px) {
+        .apply-grid { grid-template-columns: 1fr !important; }
+        .footer-grid { grid-template-columns: 1fr 1fr !important; }
+      }
+    </style>
+  </body>
+</html>

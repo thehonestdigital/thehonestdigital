@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>About · Honest Digital</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-97PPL410MQ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-97PPL410MQ');
+    </script>
+    <meta name="description" content="Why Honest Digital exists, and the plain principles behind everything we teach musicians." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="site.css" />
+    <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+    <script type="text/babel" src="logo.jsx"></script>
+    <script type="text/babel" src="site-shared.jsx"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      function Intro() {
+        return (
+          <section className="section" style={{ paddingTop: 40, paddingBottom: 80 }}>
+            <div className="container relative">
+              <div className="eyebrow" style={{ marginBottom: 26 }}>About us</div>
+              <h1 className="display h-xl" style={{ maxWidth: 1000 }}>
+                We started Honest Digital because the <span className="italic">good</span> advice was buried under buzzwords.
+              </h1>
+              <p className="lead" style={{ marginTop: 34, maxWidth: 720 }}>
+                For ten years we built brands and software for companies who could afford a whole team. We watched musicians get sold jargon, hype, and theory dressed up as help. So we packed up what actually works, threw out the filler, and made it $37 a month, delivered straight.
+              </p>
+            </div>
+          </section>
+        );
+      }
+
+      function BigStatement() {
+        return (
+          <section className="section" style={{ background: 'var(--ink)', color: 'var(--cream)', paddingTop: 120, paddingBottom: 120, position: 'relative', zIndex: 1, overflow: 'hidden' }}>
+            <div className="container relative">
+              <p className="display h-md" style={{ maxWidth: 980, color: 'var(--cream)', lineHeight: 1.15, letterSpacing: '-0.015em' }}>
+                Honesty, to us, isn&rsquo;t a vibe. It&rsquo;s <span className="italic" style={{ color: 'var(--marigold)' }}>how we deliver the information.</span> Direct, truthful, no jargon. We tell you what works, what doesn&rsquo;t, and exactly what to do next.
+              </p>
+            </div>
+            <div aria-hidden style={{ position: 'absolute', top: -40, right: -40, color: 'rgba(246,242,234,0.06)' }}>
+              <DandelionO size={1.5} variant="classic" puffStyle="brush" withSeeds={false} whole={true} />
+            </div>
+          </section>
+        );
+      }
+
+      const PRINCIPLES = [
+        { n: 'I', t: 'Say it straight.', b: 'No jargon, no buzzwords, no theory for theory&rsquo;s sake. If we can&rsquo;t explain it plainly, we don&rsquo;t understand it well enough yet.' },
+        { n: 'II', t: 'Get to the point.', b: 'You don&rsquo;t have time for a 40-minute video that could&rsquo;ve been three sentences. Every course gets to what-to-do fast.' },
+        { n: 'III', t: 'Tell the truth, even when it&rsquo;s inconvenient.', b: 'If a tactic won&rsquo;t work for your kind of music, we say so. We&rsquo;d rather lose the upsell than waste your month.' },
+        { n: 'IV', t: 'Show the actual steps.', b: 'Not &ldquo;build your brand,&rdquo; but the literal next click. We hand you the steps, the templates, and the examples that worked.' },
+        { n: 'V', t: 'No hype, no fear.', b: 'We don&rsquo;t manufacture urgency or dangle secrets. Just clear information you can act on today, calmly.' },
+        { n: 'VI', t: 'Respect your intelligence.', b: 'You&rsquo;re a musician, not an idiot. We explain the why behind every step so you can decide for yourself.' },
+      ];
+      function Principles() {
+        return (
+          <section className="section" style={{ paddingTop: 110, paddingBottom: 70 }}>
+            <div className="container relative">
+              <SectionHeader eyebrow="What we believe" title={<>Six principles for <span className="italic">delivering it straight.</span></>} />
+              <div style={{ marginTop: 60, display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '14px 56px' }} className="principles-grid">
+                {PRINCIPLES.map((p, i) => (
+                  <Reveal key={i} delay={(i % 2) * 70}>
+                    <article style={{ display: 'grid', gridTemplateColumns: '64px 1fr', gap: 20, padding: '30px 0', borderTop: '1px solid var(--line)' }}>
+                      <div className="italic" style={{ fontSize: 34, color: 'var(--soft-grey)', lineHeight: 1 }}>{p.n}</div>
+                      <div>
+                        <h3 style={{ margin: '0 0 12px', fontWeight: 700, fontSize: 25, letterSpacing: '-0.01em' }} dangerouslySetInnerHTML={{ __html: p.t }} />
+                        <p style={{ margin: 0, fontSize: 16, lineHeight: 1.6, color: 'var(--warm-grey)' }} dangerouslySetInnerHTML={{ __html: p.b }} />
+                      </div>
+                    </article>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      }
+
+      function CTA() {
+        return (
+          <section className="section" style={{ paddingBottom: 110 }}>
+            <div className="container relative">
+              <div className="card" style={{ padding: 'clamp(40px, 5vw, 64px)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 24, color: 'var(--clay)' }}>
+                  <DandelionO size={0.7} variant="classic" puffStyle="brush" withSeeds={true} seedCount={5} />
+                </div>
+                <h2 className="display h-lg" style={{ maxWidth: 760, margin: '0 auto' }}>Bring the music. I&rsquo;ll help with the <span className="italic">rest.</span></h2>
+                <div style={{ display: 'flex', gap: 14, justifyContent: 'center', marginTop: 32, flexWrap: 'wrap' }}>
+                  <a href="join.html" className="btn btn-clay btn-lg">Join for $37/month →</a>
+                  <a href="contact.html" className="btn btn-ghost btn-lg">Get in touch</a>
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      }
+
+      function App() {
+        return (
+          <div>
+            <DriftingSeeds count={12} />
+            <Nav active="about" />
+            <Intro />
+            <BigStatement />
+            <Principles />
+            <CTA />
+            <Footer />
+          </div>
+        );
+      }
+      ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+    <style>
+      @media (max-width: 920px) {
+        .principles-grid { grid-template-columns: 1fr !important; }
+        .footer-grid { grid-template-columns: 1fr 1fr !important; }
+      }
+    </style>
+  </body>
+</html>

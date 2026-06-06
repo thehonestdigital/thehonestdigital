@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>The Membership · Honest Digital for Musicians</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-97PPL410MQ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-97PPL410MQ');
+    </script>
+    <meta name="description" content="Everything a musician needs to build their digital foundation: monthly courses, live workshops, reusable templates, and a community. $37/month, month to month, cancel anytime." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="site.css" />
+    <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+    <script type="text/babel" src="logo.jsx"></script>
+    <script type="text/babel" src="site-shared.jsx"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const { useState } = React;
+
+      function Hero() {
+        return (
+          <section className="section" style={{ paddingTop: 40, paddingBottom: 70 }}>
+            <div className="container relative" style={{ textAlign: 'center' }}>
+              <div className="eyebrow" style={{ marginBottom: 24 }}>Honest Digital · for Musicians</div>
+              <h1 className="display h-xl" style={{ maxWidth: 1000, margin: '0 auto' }}>
+                One membership for your <span className="italic">whole</span> digital foundation.
+              </h1>
+              <p className="lead" style={{ marginTop: 30, maxWidth: 620, marginLeft: 'auto', marginRight: 'auto' }}>
+                Monthly courses, live workshops, reusable templates, and a community of musicians, all delivered the way we do everything: direct, truthful, and to the point.
+              </p>
+            </div>
+          </section>
+        );
+      }
+
+      // The price card — the centerpiece
+      function PriceCard() {
+        const includes = [
+          'New courses every month, covering socials, web, email, text and data',
+          'Live monthly workshops and Q&amp;A, with replays if you cannot make it',
+          'Reusable templates you can adapt to your own music',
+          'The community, a generous room of working musicians',
+          'Real examples of what is working for releases right now',
+          'Your whole digital foundation, in one plain-spoken place',
+        ];
+        return (
+          <section className="section" style={{ paddingBottom: 100 }}>
+            <div className="container relative">
+              <div className="card" style={{ overflow: 'hidden', display: 'grid', gridTemplateColumns: '1.1fr 1fr' }} className="price-grid">
+                {/* Left: the offer */}
+                <div style={{ padding: 'clamp(36px, 4vw, 60px)' }}>
+                  <div className="eyebrow" style={{ marginBottom: 18 }}>The membership</div>
+                  <div style={{ display: 'flex', alignItems: 'baseline', gap: 6 }}>
+                    <span className="display" style={{ fontSize: 'clamp(64px, 9vw, 104px)' }}>$37</span>
+                    <span className="italic" style={{ fontSize: 26, color: 'var(--warm-grey)' }}>/ month</span>
+                  </div>
+                  <p style={{ margin: '14px 0 0', fontSize: 16, color: 'var(--warm-grey)', lineHeight: 1.6, maxWidth: 380 }}>
+                    Month to month. No annual lock-in, no setup fee, no &ldquo;book a call&rdquo; gauntlet. Cancel in two clicks whenever you like.
+                  </p>
+                  <div style={{ marginTop: 30, display: 'flex', flexDirection: 'column', gap: 12 }}>
+                    <a href="#start" className="btn btn-clay btn-lg" style={{ width: '100%' }}>Start this month →</a>
+                    <a href="contact.html" className="btn btn-ghost btn-lg" style={{ width: '100%' }}>Have a question first?</a>
+                  </div>
+                  <div className="eyebrow" style={{ marginTop: 22, textAlign: 'center' }}>14-day &ldquo;this isn&rsquo;t for me&rdquo; refund</div>
+                </div>
+                {/* Right: what's included */}
+                <div style={{ padding: 'clamp(36px, 4vw, 60px)', background: 'var(--ink)', color: 'var(--cream)', position: 'relative', overflow: 'hidden' }}>
+                  <div className="eyebrow" style={{ color: 'rgba(246,242,234,0.6)', marginBottom: 26 }}>Everything&rsquo;s included</div>
+                  <ul style={{ display: 'flex', flexDirection: 'column', gap: 16, position: 'relative', zIndex: 1 }}>
+                    {includes.map((t, i) => (
+                      <li key={i} style={{ display: 'flex', gap: 14, alignItems: 'flex-start' }}>
+                        <span aria-hidden style={{ flexShrink: 0, marginTop: 2, color: 'var(--marigold)' }}><SeedGlyph size={20} /></span>
+                        <span style={{ fontSize: 16, lineHeight: 1.5 }} dangerouslySetInnerHTML={{ __html: t }} />
+                      </li>
+                    ))}
+                  </ul>
+                  <div aria-hidden style={{ position: 'absolute', bottom: -50, right: -40, color: 'rgba(246,242,234,0.07)' }}>
+                    <DandelionO size={1.1} variant="classic" puffStyle="brush" withSeeds={false} whole={true} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      }
+
+      // How a month feels
+      function Rhythm() {
+        const weeks = [
+          ['Courses', 'New course drops', 'A fresh, plain-language course each month walking you through one piece of your foundation, step by step.', 'var(--clay)'],
+          ['Live', 'Workshop &amp; Q&amp;A', 'Show up live to work through your questions in real time, or catch the replay whenever it suits you.', 'var(--sage)'],
+          ['Templates', 'Reusable starting points', 'Grab a template, adapt it to your music, and skip the blank page entirely.', 'var(--marigold)'],
+          ['Community', 'The room', 'Share wins, swap notes, and hear what is working for other musicians right now.', 'var(--sky)'],
+        ];
+        return (
+          <section className="section" style={{ paddingTop: 30, paddingBottom: 100 }}>
+            <div className="container relative">
+              <SectionHeader eyebrow="What you get each month" title={<>A steady <span className="italic">rhythm</span>, not another to-do list.</>} />
+              <div style={{ marginTop: 56, display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }} className="rhythm-grid">
+                {weeks.map(([w, t, b, c], i) => (
+                  <Reveal key={i} delay={i * 70}>
+                    <div className="card" style={{ padding: 28, height: '100%', borderTop: '4px solid ' + c }}>
+                      <div className="eyebrow" style={{ marginBottom: 14 }}>{w}</div>
+                      <h3 style={{ margin: '0 0 10px', fontWeight: 700, fontSize: 21, letterSpacing: '-0.01em' }}>{t}</h3>
+                      <p style={{ margin: 0, fontSize: 15, lineHeight: 1.55, color: 'var(--warm-grey)' }} dangerouslySetInnerHTML={{ __html: b }} />
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      }
+
+      // Who it's for / not for
+      function FitCheck() {
+        const forYou = ['You make the music yourself and there is no marketing team coming', 'You want your socials, site, email and data all working together', 'You would rather sound like a person than a brand', 'You want a foundation you actually own and understand'];
+        const notYou = ['You want a hands-off agency to do it all for you', 'You would rather not be told when something is not working', 'You are after viral hacks and overnight numbers', 'You want a 40-minute video instead of the three-sentence answer'];
+        return (
+          <section className="section" style={{ paddingBottom: 100 }}>
+            <div className="container relative" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 28 }} >
+              <div className="card" style={{ padding: 40, borderTop: '4px solid var(--sage)' }}>
+                <h3 className="display" style={{ fontSize: 30, marginBottom: 22 }}>It&rsquo;s for you if&hellip;</h3>
+                <ul style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+                  {forYou.map((t, i) => <li key={i} style={{ display: 'flex', gap: 12, fontSize: 16, lineHeight: 1.5 }}><span style={{ color: 'var(--sage)', flexShrink: 0 }}><SeedGlyph size={18} /></span><span dangerouslySetInnerHTML={{ __html: t }} /></li>)}
+                </ul>
+              </div>
+              <div className="card" style={{ padding: 40, borderTop: '4px solid var(--clay)' }}>
+                <h3 className="display" style={{ fontSize: 30, marginBottom: 22 }}>It&rsquo;s <span className="italic">not</span>, if&hellip;</h3>
+                <ul style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+                  {notYou.map((t, i) => <li key={i} style={{ display: 'flex', gap: 12, fontSize: 16, lineHeight: 1.5, color: 'var(--warm-grey)' }}><span style={{ color: 'var(--clay)', flexShrink: 0, marginTop: 3 }}>×</span><span dangerouslySetInnerHTML={{ __html: t }} /></li>)}
+                </ul>
+              </div>
+            </div>
+          </section>
+        );
+      }
+
+      // FAQ
+      function FAQ() {
+        const items = [
+          ['Is it really month to month?', 'Yes. You&rsquo;re billed $37 each month and can cancel anytime from your account, with no email-us-to-quit nonsense. Stay for a month or for years.'],
+          ['I&rsquo;m not techy. Will I keep up?', 'That&rsquo;s exactly who this is built for. Every course assumes no team and no jargon. If you can send an email, you can do this.'],
+          ['Is this just for one platform?', 'No. We cover your whole digital foundation: socials, website, email, text, and the data behind them, so it all works together.'],
+          ['Do I need a website already?', 'Nope. One of the courses walks you from nothing to a simple site you own. Bring it to a workshop and we&rsquo;ll work through it together.'],
+          ['What if I can&rsquo;t make the live calls?', 'Everything&rsquo;s recorded and the courses are yours while you&rsquo;re a member. Plenty of folks learn entirely from replays.'],
+          ['How often do new courses drop?', 'Every month. There&rsquo;s always something new to work through, plus the full back catalog the moment you join.'],
+        ];
+        const [open, setOpen] = useState(0);
+        return (
+          <section className="section" style={{ paddingBottom: 110 }}>
+            <div className="container relative">
+              <SectionHeader eyebrow="Straight answers" title={<>Questions, answered <span className="italic">plainly.</span></>} />
+              <div style={{ marginTop: 48, maxWidth: 880 }}>
+                {items.map(([q, a], i) => (
+                  <div key={i} style={{ borderTop: '1px solid var(--line)' }}>
+                    <button
+                      onClick={() => setOpen(open === i ? -1 : i)}
+                      style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 20, padding: '24px 0', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', font: 'inherit' }}
+                    >
+                      <span style={{ fontWeight: 700, fontSize: 'clamp(19px, 2vw, 23px)', letterSpacing: '-0.01em' }}>{q}</span>
+                      <span aria-hidden style={{ flexShrink: 0, width: 30, height: 30, borderRadius: 999, border: '1px solid var(--line-strong)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', transform: open === i ? 'rotate(45deg)' : 'none', transition: 'transform 220ms ease', fontSize: 18 }}>+</span>
+                    </button>
+                    <div style={{ maxHeight: open === i ? 220 : 0, overflow: 'hidden', transition: 'max-height 300ms ease' }}>
+                      <p className="italic" style={{ margin: '0 0 26px', fontSize: 18, lineHeight: 1.55, color: 'var(--warm-grey)', maxWidth: 680 }} dangerouslySetInnerHTML={{ __html: a }} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      }
+
+      // Final sign-up band
+      function Start() {
+        const [email, setEmail] = useState('');
+        const [done, setDone] = useState(false);
+        const submit = (e) => { e.preventDefault(); if (email.trim()) setDone(true); };
+        return (
+          <section id="start" className="section" style={{ background: 'var(--ink)', color: 'var(--cream)', paddingTop: 110, paddingBottom: 120, position: 'relative', zIndex: 1, overflow: 'hidden' }}>
+            <div className="container relative" style={{ textAlign: 'center', maxWidth: 760 }}>
+              <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 28, color: 'var(--marigold)' }}>
+                <DandelionO size={0.8} variant="classic" puffStyle="brush" withSeeds={true} seedCount={6} />
+              </div>
+              <h2 className="display h-lg" style={{ color: 'var(--cream)' }}>Start the month you stop <span className="italic" style={{ color: 'var(--marigold)' }}>waiting.</span></h2>
+              <p className="lead" style={{ color: 'rgba(246,242,234,0.78)', marginTop: 20 }}>
+                Drop your email and we&rsquo;ll take you to checkout. $37, month to month, cancel anytime.
+              </p>
+              {done ? (
+                <div style={{ marginTop: 34, display: 'inline-flex', alignItems: 'center', gap: 12 }}>
+                  <SeedGlyph size={28} color="var(--marigold)" />
+                  <span className="italic" style={{ fontSize: 22 }}>You&rsquo;re in. Check your inbox to finish joining. Welcome aboard.</span>
+                </div>
+              ) : (
+                <form onSubmit={submit} style={{ marginTop: 34, display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap' }}>
+                  <input className="input" type="email" required placeholder="you@band.com" value={email} onChange={e => setEmail(e.target.value)} style={{ minWidth: 280, maxWidth: 360, background: 'rgba(246,242,234,0.06)', color: 'var(--cream)', borderColor: 'rgba(246,242,234,0.3)' }} />
+                  <button type="submit" className="btn btn-clay btn-lg">Join for $37/month →</button>
+                </form>
+              )}
+              <div className="eyebrow" style={{ marginTop: 22, color: 'rgba(246,242,234,0.55)' }}>No contracts · No upsells · Real people on the other end</div>
+            </div>
+          </section>
+        );
+      }
+
+      function App() {
+        return (
+          <div>
+            <DriftingSeeds count={12} />
+            <Nav active="join" />
+            <Hero />
+            <PriceCard />
+            <Rhythm />
+            <FitCheck />
+            <FAQ />
+            <Start />
+            <Footer />
+          </div>
+        );
+      }
+      ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+    <style>
+      @media (max-width: 920px) {
+        .price-grid, .rhythm-grid { grid-template-columns: 1fr !important; }
+        .container[style*="1fr 1fr"] { grid-template-columns: 1fr !important; }
+        .footer-grid { grid-template-columns: 1fr 1fr !important; }
+      }
+      @media (max-width: 640px) {
+        .rhythm-grid { grid-template-columns: 1fr !important; }
+      }
+    </style>
+  </body>
+</html>
