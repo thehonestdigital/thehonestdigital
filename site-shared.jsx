@@ -32,7 +32,7 @@ function Nav({ active }) {
           {NAV_ITEMS.filter((i) => i.key !== 'home').map((i) =>
           <a key={i.key} href={i.href} className={'nav-link' + (active === i.key ? ' active' : '')}>{i.label}</a>
           )}
-          <a href="https://stan.store/thehonestdigital" target="_blank" rel="noopener" className="btn btn-clay hide-mobile" style={{ padding: '11px 20px', fontSize: 13 }}>Join · $37/mo</a>
+          <a href="https://www.skool.com/honest-digital-for-artists-2113/about" target="_blank" rel="noopener" className="btn btn-clay hide-mobile" style={{ padding: '11px 20px', fontSize: 13 }}>Join · $37/mo</a>
         </nav>
       </div>
     </header>);
